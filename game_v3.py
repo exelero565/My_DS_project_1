@@ -2,6 +2,7 @@
 Компьютер сам загадывает и сам угадывает число
 """
 
+
 def game_core_v3(number):
     predict = 50
     count = 1
