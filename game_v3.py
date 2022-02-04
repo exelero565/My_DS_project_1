@@ -6,6 +6,15 @@ import numpy as np
 
 
 def random_predict(number: int = 1) -> int:
+    """Рандомно угадываем число
+
+    Args:
+        number (int, optional): Загаданное число. Defaults to 1.
+
+    Returns:
+        int: Число попыток
+    """
+    number = np.random.randint(1,101)
     predict = 50
     count = 1
     if predict < number:
@@ -16,15 +25,19 @@ def random_predict(number: int = 1) -> int:
             count += 1
             if predict < number:
                 predict += 8
+                count += 1
             else:
                 predict -= 6
+                count += 1
         elif predict > number:
             predict -= 12
             count += 1
             if predict < number:
                 predict += 8
+                count += 1
             else:
                 predict -= 6
+                count += 1
     elif predict > number:
         predict -= 25
         count += 1
@@ -33,20 +46,24 @@ def random_predict(number: int = 1) -> int:
             count += 1
             if predict < number:
                 predict += 8
+                count += 1
             else:
                 predict -= 6
+                count += 1
         elif predict > number:
             predict -= 12
             count += 1
             if predict < number:
                 predict += 8
+                count += 1
             else:
                 predict -= 6
+                count += 1
     while predict < number:
         predict += 1
         count += 1
     while predict > number:
-        predict -= number
+        predict -= 1
         count += 1
     return count
 
