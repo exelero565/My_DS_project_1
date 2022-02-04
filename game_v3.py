@@ -14,10 +14,10 @@ def random_predict(number: int = 1) -> int:
     Returns:
         int: Число попыток
     """
-    number = np.random.randint(1,101)
-    predict = 50
-    count = 1
-    if predict < number:
+    number = np.random.randint(1,101) # задаем случайное число
+    predict = 50 # предполагаем, что переменная равна "50"
+    count = 1 # задаем счётчик операций
+    if predict < number: # проверяем соотвествует ли переменная условию
         predict += 25
         count += 1
         if predict < number:
